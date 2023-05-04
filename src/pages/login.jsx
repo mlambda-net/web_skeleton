@@ -1,16 +1,12 @@
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/core/styles';
-
-import Box from '@material-ui/core/Box';
-import SignIn from "@mlambda-net/core/login/components/signin";
-
-
+import withThemes from "@mlambda-net/core/packages/utils/withThemes";
+import Box from '@mui/material/Box';
+import SignIn from "@mlambda-net/core/packages/login/signin";
 
 
 const styles = (themes) => ({
   root: {
     height: '100%',
-    //backgroundImage: `url(${background})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
   },
@@ -22,7 +18,6 @@ const styles = (themes) => ({
 class Login extends React.Component {
   render() {
     const { classes } = this.props;
-
     return (
       <Box
         display="flex"
@@ -35,4 +30,4 @@ class Login extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Login));
+export default withThemes(styles)(Login);

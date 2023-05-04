@@ -1,16 +1,19 @@
 import React from 'react';
-import { ThemeProvider } from '@material-ui/core/styles';
+
 import { theme } from './theme';
-import Store from "./pages/store";
 import Login from "./pages/login";
+import { ThemeProvider} from "@mui/material";
+import {LangProvider} from "@mlambda-net/core/packages/lang";
 
 
 class App extends React.Component {
-  render = () => (
-    <ThemeProvider theme={theme}>
-      <Login />
-    </ThemeProvider>
-  );
+    render = () => (
+        <ThemeProvider theme={theme}>
+            <LangProvider lang="en">
+                <Login/>
+            </LangProvider>
+        </ThemeProvider>
+    );
 }
 
 
